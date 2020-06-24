@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import MovieCard from './MovieCard';
+import styles from './Search.module.css';
 
 export default class Search extends Component {
   constructor(props) {
@@ -14,13 +16,12 @@ export default class Search extends Component {
     e.preventDefault();
     let name = this.state.movieName
     fetch(`https://www.omdbapi.com/?apikey=efe3c50b&s=${name}`)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      this.setState({
-        movies: data,
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          movies: data.Search
+        })
       })
-    })
   }
 
   handleChange = (e) => {
@@ -38,6 +39,13 @@ export default class Search extends Component {
           <input type="text" id="search" name="search" value={ this.state.movieName } onChange={ this.handleChange }></input>
           <button type="submit">Search</button>
         </form>
+        <div className={styles.movieDiv}>
+        { this.state.movies.map((movie, index) => {
+          return (
+            <MovieCard movie={ movie } key={ index} />
+          )
+        })}
+        </div>
       </div>
     )
   }
