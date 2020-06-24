@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MovieCard from './MovieCard';
 import styles from './Search.module.css';
+import { Container, Row } from 'react-bootstrap'
 
 export default class Search extends Component {
   constructor(props) {
@@ -18,9 +19,11 @@ export default class Search extends Component {
     fetch(`https://www.omdbapi.com/?apikey=efe3c50b&s=${name}`)
       .then(res => res.json())
       .then(data => {
-        this.setState({
-          movies: data.Search
-        })
+        if (data.Search) {
+          this.setState({
+            movies: data.Search
+          })
+        }
       })
   }
 
@@ -39,13 +42,15 @@ export default class Search extends Component {
           <input type="text" id="search" name="search" value={ this.state.movieName } onChange={ this.handleChange }></input>
           <button type="submit">Search</button>
         </form>
-        <div className={styles.movieDiv}>
-        { this.state.movies.map((movie, index) => {
-          return (
-            <MovieCard movie={ movie } key={ index} />
-          )
-        })}
-        </div>
+        <Container className={styles.movieDiv}>
+          <Row>
+            { this.state.movies.map((movie, index) => {
+              return (
+                <MovieCard movie={ movie } key={ index} />
+              )
+            })}
+          </Row>
+        </Container>
       </div>
     )
   }
