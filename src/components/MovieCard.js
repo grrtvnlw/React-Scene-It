@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import { Card, Col, Button } from 'react-bootstrap'
 import styles from './MovieCard.module.css';
+import { connect } from 'react-redux';
+import { addMovie } from './redux/action';
 
-export default function MovieCard(props) {
+function MovieCard(props) {
+  const [movies, setMovies] = useState([])
+
+  function getDetails(id) {
+    console.log(id)
+    fetch(`https://www.omdbapi.com/?apikey=efe3c50b&s=${id}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if (data.Search) {
+          setMovies(data.Search)
+        }
+      })
+  }
+
   return (
     <Col md={4} lg={4}>
       <Card className={styles.card}>
@@ -14,10 +30,19 @@ export default function MovieCard(props) {
         <Card.Body>
             <img src={props.movie.Poster} className={styles.image} alt="" />
         </Card.Body>
-          <Button className={styles.button} variant="secondary">Details</Button>
-          <Button className={styles.button}>Add to Watchlist</Button>
+          <Button className={styles.button} onClick={() => {getDetails(props.movie.imdbID)}} variant="secondary">Details</Button>
+          <Button className={styles.button} onClick={() => {props.addMovie(props.movie)}}>Add to Watchlist</Button>
       </Card>
     </Col>
   )
 }
+
+const mapDispatchToProps = {
+  addMovie
+}
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(MovieCard)
 
