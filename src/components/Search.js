@@ -46,7 +46,7 @@ export default class Search extends Component {
           <Row>
             { this.state.movies.map((movie, index) => {
               return (
-                <MovieCard movie={ movie } key={ index} />
+                <MovieCard movie={ movie } key={ index } />
               )
             })}
           </Row>
