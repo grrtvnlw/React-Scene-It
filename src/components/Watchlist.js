@@ -18,11 +18,6 @@ class Watchlist extends Component {
             })}
           </Row>
         </Container>
-        {/* { this.props.movies.map((movie, index) => {
-          return (
-            <MovieCard movie={ movie } key={ index } />
-          )
-        })} */}
       </div>
     )
   }
