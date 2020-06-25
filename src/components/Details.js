@@ -27,12 +27,27 @@ export default class Details extends Component {
   }
   
   render() {
+    const { Plot, Genre, Awards, Actors, Director, Writer, imdbRating } = this.state.movieDetails
+    const id = this.props.id
+
     return (
       <div>
-          <Button className={styles.button} onClick={() => {this.getDetails(this.props.id)}} variant="secondary">Details</Button>
+          <Button className={styles.button} onClick={() => {this.getDetails(id)}} variant="secondary">Movie Details</Button>
           {!this.state.hidden && 
             <div>
-              <p>{this.state.movieDetails.Plot}</p>
+              { Plot !== 'N/A' && <p><b>Plot: </b>{Plot}</p> }
+              { Genre !== 'N/A' && <p><b>Plot: </b>{Genre}</p> }
+              { Awards !== 'N/A' && <p><b>Awards: </b>{Awards}</p> }
+              { Actors !== 'N/A' && <p><b>Actors: </b>{Actors}</p> }
+              { Director !== 'N/A' && <p><b>Director: </b>{Director}</p> }
+              { Writer !== 'N/A' && <p><b>Writer: </b>{Writer}</p> }
+              { imdbRating !== 'N/A' && 
+                <div className={styles.rating}>
+                  <span className={styles.imdb}><a href={`https://www.imdb.com/title/${id}`} target="_blank">IMDb</a></span>
+                  <span>{imdbRating}/10</span>
+                  <span>⭐️</span>
+                </div>
+              }
             </div>  
           }
       </div>

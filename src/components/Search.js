@@ -39,7 +39,7 @@ export default class Search extends Component {
       <div>
         <h1>Scene It</h1>
         <h4>Search for the movies you love and save them to your watchlist.</h4>
-        <Link to='/watchlist'>Watchlist</Link>
+        <Link to='/watchlist'>Go to My Watchlist</Link>
         <form onSubmit={ this.handleFormSubmit }>
           <input type="text" id="search" name="search" value={ this.state.movieName } onChange={ this.handleChange }></input>
           <button type="submit">Search</button>

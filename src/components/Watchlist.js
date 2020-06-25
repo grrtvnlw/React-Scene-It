@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import MovieCard from './MovieCard';
 import { Container, Row } from 'react-bootstrap'
-// import { addMovie } from './redux/action';
+import { Link } from 'react-router-dom'
 
 class Watchlist extends Component {
   render() {
     return (
       <div>
-        <p>Here is my watchlist</p>
+        <h1>Scene It</h1>
+        <Link to='/'>Back to Search</Link>
         <Container>
           <Row>
             { this.props.movies.map((movie, index) => {
