@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import { Card, Col, Button } from 'react-bootstrap'
 import styles from './MovieCard.module.css';

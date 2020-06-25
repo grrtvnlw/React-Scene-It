@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import MovieCard from './MovieCard';
 import styles from './Search.module.css';
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 export default class Search extends Component {
@@ -38,11 +38,11 @@ export default class Search extends Component {
     return (
       <div>
         <h1>Scene It</h1>
-        <h4>Search for the movies you love and save them to your watchlist.</h4>
+        <h5>Search for the movies you love and save them to your watchlist.</h5>
         <Link to='/watchlist'>Go to My Watchlist</Link>
         <form onSubmit={ this.handleFormSubmit }>
-          <input type="text" id="search" name="search" value={ this.state.movieName } onChange={ this.handleChange }></input>
-          <button type="submit">Search</button>
+          <input type="text" id="search" name="search" value={ this.state.movieName } onChange={ this.handleChange } placeholder="Search for a movie..."></input>
+          <Button type="submit" variant="secondary">Search</Button>
         </form>
         <Container className={styles.movieDiv}>
           <Row>

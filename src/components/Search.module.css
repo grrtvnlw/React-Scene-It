@@ -1,3 +1,17 @@
 .movieDiv {
   margin-top: 50px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+form button {
+  width: 15%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
