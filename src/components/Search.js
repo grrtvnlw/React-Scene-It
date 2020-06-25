@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MovieCard from './MovieCard';
 import styles from './Search.module.css';
+import 'bootstrap/dist/css/bootstrap.css'
 import { Container, Row, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
@@ -22,7 +23,8 @@ export default class Search extends Component {
       .then(data => {
         if (data.Search) {
           this.setState({
-            movies: data.Search
+            movies: data.Search,
+            movieName: ''
           })
         }
       })
@@ -39,7 +41,7 @@ export default class Search extends Component {
       <div>
         <header>
           <h1>Scene It</h1>
-          <h5>Search for the movies you love and save them to your watchlist.</h5>
+          <h5 className="mt-2 mb-3">Search for the movies you love and save them to your watchlist.</h5>
           <Link to='/watchlist'>Go to My Watchlist</Link>
           <form onSubmit={ this.handleFormSubmit }>
             <input type="text" id="search" name="search" value={ this.state.movieName } onChange={ this.handleChange } placeholder="Search for a movie..."></input>

@@ -15,7 +15,7 @@ function MovieCard(props) {
     <Col md={4} lg={4}>
       <Card className={styles.card}>
         <Card.Header className={styles.header}>
-        <Card.Title><h3>{props.movie.Title}</h3></Card.Title>
+          <Card.Title><h3>{props.movie.Title}</h3></Card.Title>
           <h5>{props.movie.Year}</h5>
         </Card.Header>
         <Card.Body>

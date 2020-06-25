@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import MovieCard from './MovieCard';
+import 'bootstrap/dist/css/bootstrap.css'
 import { Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 

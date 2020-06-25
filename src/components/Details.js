@@ -16,7 +16,6 @@ export default class Details extends Component {
     fetch(`https://www.omdbapi.com/?apikey=efe3c50b&i=${id}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         if (data) {
           this.setState({
             hidden: !this.state.hidden,
