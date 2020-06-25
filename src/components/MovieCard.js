@@ -14,8 +14,6 @@ function MovieCard(props) {
   return (
     <Col sm={6} md={4} lg={3}>
       <Card className={styles.card}>
-        {/* <Card.Header className={styles.header}>
-        </Card.Header> */}
         <img src={props.movie.Poster} className={styles.image} alt="" />
         <div className={styles.info}>
           <h4>{props.movie.Title}</h4>
@@ -30,15 +28,6 @@ function MovieCard(props) {
               <Button className={styles.button} onClick={() => {props.deleteMovie(props.movie)}}>Remove from Watchlist</Button>
           }
         </div>
-      {/* <Card className={styles.card}>
-        <Card.Header className={styles.header}>
-          <Card.Title><h3>{props.movie.Title}</h3></Card.Title>
-          <h5>{props.movie.Year}</h5>
-        </Card.Header>
-        <Card.Body className={styles.body}>
-            <img src={props.movie.Poster} className={styles.image} alt="" />
-        </Card.Body>
-          <Details id={props.movie.imdbID} /> */}
           {/* {
             location.pathname === '/' ? 
               <Button className={styles.button} onClick={() => {props.addMovie(props.movie)}}>Add to Watchlist</Button> 

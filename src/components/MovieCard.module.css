@@ -49,7 +49,6 @@
 }
 
 .details {
-  /* max-height: 100px; */
   margin-left: 10px;
   margin-right: 10px;
   overflow: auto;
@@ -64,10 +63,8 @@
 }
 
 .buttons {
-  /* height: 20; */
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
 }
