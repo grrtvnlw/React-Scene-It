@@ -37,13 +37,15 @@ export default class Search extends Component {
   render() {
     return (
       <div>
-        <h1>Scene It</h1>
-        <h5>Search for the movies you love and save them to your watchlist.</h5>
-        <Link to='/watchlist'>Go to My Watchlist</Link>
-        <form onSubmit={ this.handleFormSubmit }>
-          <input type="text" id="search" name="search" value={ this.state.movieName } onChange={ this.handleChange } placeholder="Search for a movie..."></input>
-          <Button type="submit" variant="secondary">Search</Button>
-        </form>
+        <header>
+          <h1>Scene It</h1>
+          <h5>Search for the movies you love and save them to your watchlist.</h5>
+          <Link to='/watchlist'>Go to My Watchlist</Link>
+          <form onSubmit={ this.handleFormSubmit }>
+            <input type="text" id="search" name="search" value={ this.state.movieName } onChange={ this.handleChange } placeholder="Search for a movie..."></input>
+            <Button type="submit" variant="secondary">Search</Button>
+          </form>
+        </header>
         <Container className={styles.movieDiv}>
           <Row>
             { this.state.movies.map((movie, index) => {

@@ -34,7 +34,7 @@ export default class Details extends Component {
       <div>
           <Button className={styles.button} onClick={() => {this.getDetails(id)}} variant="secondary">Movie Details</Button>
           {!this.state.hidden && 
-            <div>
+            <div className={styles.details}>
               { Plot !== 'N/A' && <p><b>Plot: </b>{Plot}</p> }
               { Genre !== 'N/A' && <p><b>Plot: </b>{Genre}</p> }
               { Awards !== 'N/A' && <p><b>Awards: </b>{Awards}</p> }

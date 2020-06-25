@@ -5,17 +5,18 @@ import styles from './MovieCard.module.css';
 import { connect } from 'react-redux';
 import { addMovie, deleteMovie } from './redux/action';
 import Details from './Details';
-import { useLocation } from 'react-router-dom'
+// import { useLocation } from 'react-router-dom'
+
+// alternative location-based ternary included for future reference
 
 function MovieCard(props) {
-  const location = useLocation()
-  console.log(location)
+  // const location = useLocation()
   return (
     <Col md={4} lg={4}>
       <Card className={styles.card}>
         <Card.Header className={styles.header}>
-        <Card.Title><h1>{props.movie.Title}</h1></Card.Title>
-          <h3>{props.movie.Year}</h3>
+        <Card.Title><h3>{props.movie.Title}</h3></Card.Title>
+          <h5>{props.movie.Year}</h5>
         </Card.Header>
         <Card.Body>
             <img src={props.movie.Poster} className={styles.image} alt="" />

@@ -10,7 +10,7 @@ class Watchlist extends Component {
       <div>
         <h1>Scene It</h1>
         <Link to='/'>Back to Search</Link>
-        <Container>
+        <Container className="mt-4">
           <Row>
             { this.props.movies.map((movie, index) => {
               return (

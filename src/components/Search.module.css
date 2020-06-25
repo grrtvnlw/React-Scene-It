@@ -2,10 +2,22 @@
   margin-top: 50px;
 }
 
+h1 {
+  color: red
+}
+
+header {
+  padding: 10px;
+}
+
+header Link {
+  margin-top: 40px;
+}
+
 form {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 50%;
   margin: 10px auto;
   padding: 10px;
 }
