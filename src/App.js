@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route path="/" exact component={Search} />
-          <Route path="/watchlist" component={Watchlist} />
+          <Route path="/" exact component={ Search } />
+          <Route path="/watchlist" component={ Watchlist } />
         </Switch>
       </div>
     </BrowserRouter>
