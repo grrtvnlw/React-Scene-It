@@ -12,8 +12,25 @@ import Details from './Details';
 function MovieCard(props) {
   // const location = useLocation()
   return (
-    <Col md={4} lg={4}>
+    <Col sm={6} md={4} lg={3}>
       <Card className={styles.card}>
+        {/* <Card.Header className={styles.header}>
+        </Card.Header> */}
+        <img src={props.movie.Poster} className={styles.image} alt="" />
+        <div className={styles.info}>
+          <h4>{props.movie.Title}</h4>
+          <h5>{props.movie.Year}</h5>
+        </div>
+        <div className={styles.buttons}>
+          <Details id={props.movie.imdbID} />
+          {
+            props.movies.findIndex((movie) => props.movie.imdbID === movie.imdbID) === -1 ? 
+              <Button className={styles.button} onClick={() => {props.addMovie(props.movie)}}>Add to Watchlist</Button> 
+            :
+              <Button className={styles.button} onClick={() => {props.deleteMovie(props.movie)}}>Remove from Watchlist</Button>
+          }
+        </div>
+      {/* <Card className={styles.card}>
         <Card.Header className={styles.header}>
           <Card.Title><h3>{props.movie.Title}</h3></Card.Title>
           <h5>{props.movie.Year}</h5>
@@ -21,19 +38,14 @@ function MovieCard(props) {
         <Card.Body className={styles.body}>
             <img src={props.movie.Poster} className={styles.image} alt="" />
         </Card.Body>
-          <Details id={props.movie.imdbID} />
+          <Details id={props.movie.imdbID} /> */}
           {/* {
             location.pathname === '/' ? 
               <Button className={styles.button} onClick={() => {props.addMovie(props.movie)}}>Add to Watchlist</Button> 
             :
               <Button className={styles.button} onClick={() => {props.deleteMovie(props.movie)}}>Remove from Watchlist</Button>
           } */}
-          {
-            props.movies.findIndex((movie) => props.movie.imdbID === movie.imdbID) === -1 ? 
-              <Button className={styles.button} onClick={() => {props.addMovie(props.movie)}}>Add to Watchlist</Button> 
-            :
-              <Button className={styles.button} onClick={() => {props.deleteMovie(props.movie)}}>Remove from Watchlist</Button>
-          }
+          
       </Card>
     </Col>
   )

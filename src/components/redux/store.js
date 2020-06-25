@@ -7,7 +7,7 @@ const persistedState = localStorage.getItem('reduxState')
 
 const store = createStore(
     reducer, persistedState,
-    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 // subscribes persisted storage to the global redux store
