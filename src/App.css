@@ -1,7 +1,10 @@
+html {
+  background-color: #eee;
+}
+
 .App {
   text-align: center;
   background-color: #eee;
-  /* height: 100vh; */
 }
 
 @media (prefers-reduced-motion: no-preference) {

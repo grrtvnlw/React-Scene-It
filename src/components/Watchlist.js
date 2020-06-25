@@ -9,8 +9,11 @@ class Watchlist extends Component {
   render() {
     return (
       <div>
-        <h1>Scene It</h1>
-        <Link to='/'>Back to Search</Link>
+        <header>
+          <h1>Scene It</h1>
+          <h5 className="mt-2 mb-3">Search for the movies you love and save them to your watchlist.</h5>
+          <Link to='/'>Back to Search</Link>
+        </header>
         <Container className="mt-4">
           <Row>
             { this.props.movies.map((movie, index) => {

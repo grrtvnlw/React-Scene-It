@@ -18,7 +18,7 @@ function MovieCard(props) {
           <Card.Title><h3>{props.movie.Title}</h3></Card.Title>
           <h5>{props.movie.Year}</h5>
         </Card.Header>
-        <Card.Body>
+        <Card.Body className={styles.body}>
             <img src={props.movie.Poster} className={styles.image} alt="" />
         </Card.Body>
           <Details id={props.movie.imdbID} />
