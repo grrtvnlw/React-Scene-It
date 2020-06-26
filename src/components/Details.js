@@ -35,7 +35,7 @@ export default class Details extends Component {
           {!this.state.hidden && 
             <div className={styles.details}>
               { Plot !== 'N/A' && <p><b>Plot: </b>{Plot}</p> }
-              { Genre !== 'N/A' && <p><b>Plot: </b>{Genre}</p> }
+              { Genre !== 'N/A' && <p><b>Genre: </b>{Genre}</p> }
               { Awards !== 'N/A' && <p><b>Awards: </b>{Awards}</p> }
               { Actors !== 'N/A' && <p><b>Actors: </b>{Actors}</p> }
               { Director !== 'N/A' && <p><b>Director: </b>{Director}</p> }
