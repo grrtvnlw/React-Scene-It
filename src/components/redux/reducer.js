@@ -10,11 +10,13 @@ function reducer(state = initialState, action) {
       return {
         movies: [...state.movies, action.value]
       }
+      break;
     case DELETEMOVIE:
       let results = state.movies.filter(movie => movie.imdbID !== action.value.imdbID)
       return {
         movies: results
       }
+      break;
     default:
       return state;
   }
